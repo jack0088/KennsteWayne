@@ -1,19 +1,21 @@
 <header class="pure-g">
 	<div id="blog-cover" class="pure-u-2-3" style="background-image: url({{asset 'images/CatHead.png'}}), url({{#if @blog.cover}} {{@blog.cover}} {{else}} {{asset 'images/DefaultBanner.png'}} {{/if}})">
-			<h1 {{#if @blog.logo}} id="blog-logo" style="background: url({{@blog.logo}})" {{else}} id="blog-title" {{/if}}><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
-			{{#if @blog.description}}<h4 id="blog-description">{{{@blog.description}}}</h4>{{/if}}
+			<a href="{{@blog.url}}"><h1 {{#if @blog.logo}} id="blog-logo" style="background: url({{@blog.logo}})" {{else}} id="blog-title" {{/if}}>{{@blog.title}}</h1></a>
+			<h4 id="blog-description">{{{@blog.description}}}</h4>
 	</div>
 	
 	<section id="ghostwriter" class="pure-u-1-3">
-		<a href="{{@blog.url}}/ghostwriter">
-			<h2>Ghostwriter!</h2>
-			<hr />
-			<p>Sie suchen eine Person, die Ihre Gedanken zu Papier bringt? Hier sind Sie richtig.</p>
-		</a>
-		<a id="blog-subscription" class="pure-button" href="{{@blog.url}}/rss">Blog abonieren</a>
+		<div>
+			<a id="ghostwriter-advert" href="{{@blog.url}}/ghostwriter">
+				<h2>Ghostwriter!</h2>
+				<hr />
+				<p>Sie suchen eine Person, die Ihre Gedanken zu Papier bringt? Hier sind Sie richtig.</p>
+			</a>
+			<a id="blog-subscription" class="pure-button" href="{{@blog.url}}/rss">Blog abonieren</a>
+		</div>
 	</section>
 	
-	<aside id="amazon-comercial" class="pure-g">
+	<aside id="amazon-comercial" class="pure-u-1">
 		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=kennst-21&o=3&p=48&l=ur1&category=gift_certificates&banner=0XJZ3YTCB49CW4YFQKG2&f=ifr" width="728" height="90" scrolling="no" border="0" marginwidth="0" frameborder="0"></iframe>
 	</aside>
 </header>
