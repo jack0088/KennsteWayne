@@ -1,0 +1,201 @@
+/* GENERAL STYLES */
+
+body {
+	background: #FBF9F1;
+	word-wrap: break-word;
+}
+
+hr {
+	width: 40%;
+	height: 2px;
+	border: 0;
+	background: #FCEDD0;
+}
+
+
+/* DESIGN SPECIFIC PROPS */
+
+.twitter-timeline {
+	background-color: #323232;
+	width: 100% !important;
+	display: none;
+}
+
+#amazon-comercial {
+	width: 100%;
+	overflow: hidden;
+	background: #333;
+	border-top: 3px solid #FBF9F1; /* re-color background */
+	border-bottom: 3px solid #FBF9F1;
+}
+#amazon-comercial > * {
+	display: block;
+	margin: 0 auto;
+}
+
+#posts_list { /* List of posts on page.hbs and post.hbs */
+	display: none;
+}
+
+#disqus_thread { /* Comments plugin */
+	padding: 40px 3px 0 3px;
+}
+
+#content {
+	z-index: 20; /* overlay #content over .twitter-timeline */
+}
+#content header {
+	position: relative;
+	overflow: hidden;
+	background: #429F8A;
+}
+
+#banner {
+	background-color: #FCEDD0;
+	background-repeat: no-repeat, no-repeat; /* for multiple images */
+	background-position: right bottom, center center;
+	background-size: auto 92%, cover;
+	background-clip: border-box, content-box; /* this allows background-images to visibly overflow */
+	margin-right: -28px;
+	padding-right: 28px;
+	z-index: 10;
+	position: relative; /* for nesting elements */
+	min-height: 300px; /* min-height for banner */
+}
+#blog-title { /* and {{@blog.logo}} */
+	display: inline-block;
+}
+#blog-description {
+	width: 80%;
+	display: block;
+	position: absolute;
+	bottom: -15px;
+	text-align: center;
+	color: red;
+	text-shadow: -1px 1px 1px DarkRed; /* horizontal-offset vertical-offset 'blur' colour */
+	-moz-text-shadow: -1px 1px 1px DarkRed;
+	-webkit-text-shadow: -1px 1px 1px DarkRed;
+}
+#ghostwriter {
+	position: relative;
+	margin-top: auto !important; /* adjust elements to bottom */
+	color: #FCEDD0;
+	text-transform: uppercase;
+	text-align: center;
+}
+#ghostwriter > span { /* container */
+	display: inline-block;
+	vertical-align: bottom;
+	width: 80%;
+	margin: 0 auto;
+}
+#ghostwriter p {
+	margin-bottom: 25%;
+}
+#ghostwriter p a {
+	text-decoration: none;
+	color: inherit;
+}
+#ghostwriter a { /* subscribe icon */
+	background-repeat: no-repeat;
+	background-position: 96% center;
+	background-size: auto 80%;
+	padding-left: 5%;
+	padding-right: 20%;
+	text-align: left;
+}
+
+.post {
+	color: #000000;
+	text-align: center;
+	border-bottom: 3px solid #FBF9F1; /* additional overlay fix for #content */
+}
+.post > p {
+	text-align: left;
+}
+.post > span,
+.post > * > span { /* container */
+	display: inline-block;
+	padding: 20px;
+}
+.post time {
+	color: #2C6458;
+}
+.post img {
+	max-width: 100% !important;
+}
+.preview-image { /* {{image}} */
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	content: " ";
+	/*min-height: 300px;*/ /* min-height for .post */
+}
+
+.excerpt {
+	color: #FCEDD0;
+	background: #429F8A;
+}
+
+.pagination {
+	margin-bottom: 5px;
+	text-align: center;
+	text-transform: uppercase;
+	/*background: #F5A623;*/
+}
+.pagination .pure-button {
+	display: block;
+	border: 1px solid white; /* for visual separation */
+}
+
+
+/* RESPONSIVE MEDIA QUERIES */
+
+@media screen and (min-width: 48em) { /* additional pure-u-md-* props */
+	#posts_list {
+		display: initial;
+	}
+	
+	.twitter-timeline {
+		display: initial;
+		min-height: 100% !important;
+		height: 100%;
+	}
+	
+	#content > * {
+		margin-left: 3px;
+	}
+}
+
+
+/* QUICK HELPER CLASSES */
+
+.featured-ribbon {
+	margin-top: auto !important; /* align elements to bottom */
+	background-repeat: no-repeat;
+	background-position: right top !important;
+}
+
+.pure-button {
+	white-space: normal; /* allow text wrapping inside buttons */
+}
+.button-xs {
+	font-size: 70%;
+}
+.button-s {
+	font-size: 83%;
+}
+.button-l {
+	font-size: 113%;
+}
+.button-xl {
+	font-size: 125%;
+}
+.green-green {
+	color: #429F8A;
+	background: #2C6458;
+}
+.orange-white {
+	color: #FFFFFF;
+	background: #F5A623;
+}

@@ -1,0 +1,27 @@
+{{!< default}}
+
+<main class="pure-g">
+	<aside class="pure-u-1 pure-u-md-1-4"><a class="twitter-timeline" href="https://twitter.com/braini0088" data-widget-id="551783344569327617">Twitter Timeline von @braini0088</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></aside>
+	
+	<div class="pure-u-1 pure-u-md-3-4" id="content">
+		{{> banner}}
+	    
+		{{#foreach posts}}
+		    <article class="pure-g {{post_class}} excerpt">
+				<div class="pure-u-1-2 featured-ribbon" {{#if featured}} style="background-image: url({{asset 'images/FeaturedRibbon.png'}})" {{/if}}>
+					<span>
+						<time>{{date format="DD. MMM YYYY"}}</time>
+						<h2>{{title}}</h2>
+						<hr />
+		        		<p>{{excerpt words="40"}}</p>
+					</span>
+					<a class="pure-button green-green" href="{{url}}">lesen</a>
+				</div>
+		
+				<div class="pure-u-1-2 preview-image" style="background-image: url({{#if image}} {{image}} {{else}} {{asset 'images/ImageMissing.jpg'}} {{/if}})">&nbsp;</div>
+		    </article>
+		{{/foreach}}
+		
+		<footer class="pure-g pure-u-1 pure-u-sm-1-2">{{pagination}}</footer>
+	</div>
+</main>
