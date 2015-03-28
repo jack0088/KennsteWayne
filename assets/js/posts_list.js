@@ -38,7 +38,7 @@ $(function() {
 			var post = posts[i];
 			var excerpt = crop($("<div/>").html(post.content).text(), num_words); // strip html and crop string!
 			
-		    template += "<article class='post'><time>" + post.date.substr(5, 11) + "</time><h2>" + post.title + "</h2><hr /><p>" + excerpt + "</p><a class='pure-button button-s green-green' href='" + post.url + "'>lesen</a></article>";
+		    template += "<article class='post'><time class='post-date'>" + post.date.substr(5, 11) + "</time><h2 class='post-title'>" + post.title + "</h2><hr /><p class='post-content'>" + excerpt + "</p><a class='pure-button button-s green-green' href='" + post.url + "'>lesen</a></article>";
 		}
 		$("#posts_list").html(template)
 	});
