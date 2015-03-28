@@ -15,10 +15,13 @@ hr {
 
 /* DESIGN SPECIFIC PROPS */
 
+#twitter-timeline {
+	display: none;
+}
+
 .twitter-timeline {
 	background-color: #323232;
 	width: 100% !important;
-	display: none;
 }
 
 #amazon-comercial {
@@ -151,15 +154,19 @@ hr {
 
 /* RESPONSIVE MEDIA QUERIES */
 
-@media screen and (min-width: 48em) { /* additional pure-u-md-* props */
-	#posts_list {
-		display: initial;
+@media screen and (min-width: 48em) { /* pure-u-md-* */
+	#twitter-timeline {
+		display: block;
 	}
 	
 	.twitter-timeline {
-		display: initial;
+		display: block;
 		min-height: 100% !important;
 		height: 100%;
+	}
+	
+	#posts_list {
+		display: initial;
 	}
 	
 	#content > * {
@@ -179,23 +186,8 @@ hr {
 .pure-button {
 	white-space: normal; /* allow text wrapping inside buttons */
 }
-.button-xs {
-	font-size: 70%;
-}
-.button-s {
-	font-size: 83%;
-}
-.button-l {
-	font-size: 113%;
-}
-.button-xl {
-	font-size: 125%;
-}
-.green-green {
-	color: #429F8A;
-	background: #2C6458;
-}
-.orange-white {
-	color: #FFFFFF;
-	background: #F5A623;
-}
+
+.button-xs {font-size: 70%;}
+.button-s {font-size: 83%;}
+.button-l {font-size: 113%;}
+.button-xl {font-size: 125%;}

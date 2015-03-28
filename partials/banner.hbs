@@ -1,17 +1,19 @@
 <header class="pure-g">
-	<div class="pure-u-2-3" id="banner" style="background-image: url({{asset 'images/CatHead.png'}}), url({{#if @blog.cover}} {{@blog.cover}} {{else}} {{asset 'images/DefaultBanner.png'}} {{/if}})">
-		{{#if @blog.logo}}<a id="blog-title" href="{{@blog.url}}"><h1><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></h1></a>{{/if}}
-		{{#if @blog.description}}<h4 id="blog-description">{{{@blog.description}}}</h4>{{/if}}
+	<div id="blog-cover" class="pure-u-2-3" style="background-image: url({{asset 'images/CatHead.png'}}), url({{#if @blog.cover}} {{@blog.cover}} {{else}} {{asset 'images/DefaultBanner.png'}} {{/if}})">
+			<h1 {{#if @blog.logo}} id="blog-logo" style="background: url({{@blog.logo}})" {{else}} id="blog-title" {{/if}}><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+			{{#if @blog.description}}<h4 id="blog-description">{{{@blog.description}}}</h4>{{/if}}
 	</div>
 	
-	<div class="pure-u-1-3" id="ghostwriter">
-		<span>
+	<section id="ghostwriter" class="pure-u-1-3">
+		<a href="{{@blog.url}}/ghostwriter">
 			<h2>Ghostwriter!</h2>
 			<hr />
-			<p><a href="{{@blog.url}}/ghostwriter">Sie suchen eine Person, die Ihre Gedanken zu Papier bringt? Hier sind Sie richtig!</a></p>
-			<a class="pure-button {{!button-s}} green-green" href="{{@blog.url}}/rss" style="background-image: url({{asset 'images/rss.png'}})">Blog abonieren</a>
-		</span>
-	</div>
+			<p>Sie suchen eine Person, die Ihre Gedanken zu Papier bringt? Hier sind Sie richtig.</p>
+		</a>
+		<a id="blog-subscription" class="pure-button" href="{{@blog.url}}/rss">Blog abonieren</a>
+	</section>
 	
-	<aside id="amazon-comercial"><iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=kennst-21&o=3&p=48&l=ur1&category=gift_certificates&banner=0XJZ3YTCB49CW4YFQKG2&f=ifr" width="728" height="90" scrolling="no" border="0" marginwidth="0" frameborder="0"></iframe></aside>
+	<aside id="amazon-comercial" class="pure-g">
+		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=kennst-21&o=3&p=48&l=ur1&category=gift_certificates&banner=0XJZ3YTCB49CW4YFQKG2&f=ifr" width="728" height="90" scrolling="no" border="0" marginwidth="0" frameborder="0"></iframe>
+	</aside>
 </header>
