@@ -3,6 +3,8 @@
 body {
 	background: #FBF9F1;
 	word-wrap: break-word;
+	height: 100%;
+	width: 100%;
 }
 
 hr {
@@ -19,9 +21,16 @@ hr {
 	display: none;
 }
 
+#twitter-timeline iframe, iframe#twitter-widget-0, iframe#twitter-widget-0 > * {
+	width: 100% !important;
+	min-width: 100% !important;
+	height: 600px;
+	min-height: 100% !important;
+	max-height: 100% !important;
+}
+
 .twitter-timeline {
 	background-color: #323232;
-	width: 100% !important;
 }
 
 #amazon-comercial {
@@ -156,13 +165,7 @@ hr {
 
 @media screen and (min-width: 48em) { /* pure-u-md-* */
 	#twitter-timeline {
-		display: block;
-	}
-	
-	.twitter-timeline {
-		display: block;
-		min-height: 100% !important;
-		height: 100%;
+		display: inline-block;
 	}
 	
 	#posts_list {
