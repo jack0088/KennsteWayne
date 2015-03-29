@@ -138,22 +138,23 @@ iframe#twitter-widget-0 {
 	z-index: 20; /* overlay #content over #twitter-timeline */
 }
 
-#content > article {
-	overflow: hidden;
-}
-
 #posts_list { /* ghost partial */
 	display: none;
 }
 
-.post {
-	color: #FCEDD0;
-	background: #429F8A;
-	position: relative;
-	margin-bottom: 1px;
+#content > article {
 	text-align: center;
 	font-size: 14px;
+	color: #FCEDD0;
+	margin-bottom: 2px;
 	position: relative;
+	background-color: #429F8A !important;
+	background-repeat: no-repeat !important;
+	background-position: right center !important;
+	background-size: auto 100% !important;
+}
+
+.post {
 }
 
 .post-title {
@@ -178,7 +179,7 @@ iframe#twitter-widget-0 {
 img.featured-ribbon { /* featured posts */
 	position: absolute;
 	top: -12px;
-	right: -12px;
+	left: 50%;
 }
 
 .pagination {
