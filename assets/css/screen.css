@@ -28,7 +28,7 @@ hr {
 /* VENDORS, PLUGINS */
 
 #twitter-timeline {
-	display: none;
+	display: inline-block;
 }
 
 #twitter-timeline *,
@@ -63,6 +63,10 @@ iframe#twitter-widget-0 {
 
 
 /* BLOG CONTENT */
+
+body > main {
+    overflow: hidden;
+}
 
 #content > header {
 	background: #429F8A;
@@ -103,14 +107,14 @@ iframe#twitter-widget-0 {
 
 #blog-title {
 	margin: 0;
-	max-width: 90%;
+	max-width: 100%;
 	color: #F5A623;
 	text-align: center;
 	text-decoration: none;
 }
 
 #blog-description {
-	width: 80%;
+    width: 80%;
 	display: block;
 	position: absolute;
 	bottom: -15px;
@@ -140,7 +144,7 @@ iframe#twitter-widget-0 {
 }
 
 #posts_list { /* ghost partial */
-    display: none;
+    display: inline-block;
 }
 
 #posts_list .pure-button {
@@ -150,6 +154,10 @@ iframe#twitter-widget-0 {
 
 #content {
 	z-index: 20; /* overlay #content over #twitter-timeline */
+}
+
+#content > * {
+    margin-left: 3px;
 }
 
 #content > article {
@@ -234,16 +242,36 @@ img.featured-ribbon { /* featured posts */
 
 /* RESPONSIVE MEDIA QUERIES */
 
-@media screen and (min-width: 48em) { /* pure-u-md-* */
+@media screen and (max-width: 48em) { /* do smaller devices <= pure-u-sm- */
 	#twitter-timeline {
-		display: inline-block;
+		display: none;
 	}
 
+    #blog-description {
+        width: 100%;
+    }
+
 	#posts_list {
-		display: inline-block;
+		display: none;
 	}
 
 	#content > * {
 		margin-left: 3px;
 	}
+
+    #content > * {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 35.5em) {
+    img.featured-ribbon { /* featured posts */
+        right: -12px;
+    }
+
+    img.post-image { /* {{image}} */
+        position: static;
+        width: 100%;
+        margin: 0;
+    }
 }

@@ -1,10 +1,10 @@
 <header class="pure-g">
-	<div id="blog-cover" class="pure-u-2-3" style="background-image: url({{asset 'images/CatHead.png'}}), url({{#if @blog.cover}} {{@blog.cover}} {{else}} {{asset 'images/DefaultBanner.png'}} {{/if}})">
+	<div id="blog-cover" class="pure-u-1 pure-u-sm-2-3" style="background-image: url({{asset 'images/CatHead.png'}}), url({{#if @blog.cover}} {{@blog.cover}} {{else}} {{asset 'images/DefaultBanner.png'}} {{/if}})">
 			<a href="{{@blog.url}}"><h1 {{#if @blog.logo}} id="blog-logo" style="background: url({{@blog.logo}})" {{else}} id="blog-title" {{/if}}>{{@blog.title}}</h1></a>
 			<h4 id="blog-description">{{{@blog.description}}}</h4>
 	</div>
 	
-	<section id="ghostwriter" class="pure-u-1-3">
+	<section id="ghostwriter" class="pure-u-1 pure-u-sm-1-3">
 		<div>
 			<a id="ghostwriter-advert" href="{{@blog.url}}/ghostwriter">
 				<h2>Ghostwriter!</h2>
