@@ -16,10 +16,10 @@ body {
 }
 
 hr {
-	width: 40%;
+	width: 100%;
 	height: 2px;
 	border: 0;
-	background: #FCEDD0;
+	background: #D7CED8;
 }
 
 
@@ -118,6 +118,10 @@ iframe#twitter-widget-0 {
 	color: red;
 }
 
+#blog-subscription {
+    margin-top: 20px;
+}
+
 #ghostwriter div {
 	word-wrap: break-word; /* break even characters */
 	text-transform: uppercase;
@@ -130,16 +134,26 @@ iframe#twitter-widget-0 {
 	text-decoration: none;
 }
 
-#blog-subscription {
-	margin-top: 20px;
+#ghostwriter hr, .post hr {
+    width: 40%;
+    background: #FCEDD0;
 }
 
 #posts_list { /* ghost partial */
     display: none;
 }
 
+#posts_list .pure-button {
+    color: #429F8A;
+    background: #2C6458;
+}
+
 #content {
 	z-index: 20; /* overlay #content over #twitter-timeline */
+}
+
+#content > article {
+    position: relative;
 }
 
 #content > article img {
@@ -147,7 +161,7 @@ iframe#twitter-widget-0 {
 }
 
 .post-wrapper {
-    background: #E7DDE8; /* #F6F6F6 */
+    background: #E7DDE8;
     position: relative;
     overflow: hidden;
 }
@@ -166,6 +180,7 @@ iframe#twitter-widget-0 {
 }
 
 .post-date {
+    color: #2C6458;
 	font-size: 18px;
 }
 
@@ -185,53 +200,25 @@ img.post-image { /* {{image}} */
 }
 
 img.featured-ribbon { /* featured posts */
+    z-index: 30;
 	position: absolute;
-    top: 0;
-    right: 0;
+    top: -12px;
+    right: calc(50% - 12px);
 }
 
-.pagination {
-	margin-bottom: 5px;
-	text-align: center;
-	text-transform: uppercase;
-	background: #F5A623;
+#pagination {
+    text-align: center;
+    margin: 2px 0 2px 0;
 }
 
-.pagination .pure-button {
-	display: block;
-	border: 1px solid white; /* for visual separation */
-}
-
-
-/* RESPONSIVE MEDIA QUERIES */
-
-@media screen and (min-width: 48em) { /* pure-u-md-* */
-	#twitter-timeline {
-		display: inline-block;
-	}
-
-	#posts_list {
-		display: initial;
-	}
-
-	#content > * {
-		margin-left: 3px;
-	}
-}
-
-
-/* QUICK HELPER CLASSES */
-
-.featured-ribbon {
-	margin-top: auto !important; /* align elements to bottom */
-	background-image: url(../images/FeaturedRibbon.png) !important;
-	background-repeat: no-repeat;
-	background-position: right top !important;
-	z-index: 1;
+#pagination .pure-button {
+    background: #F5A623;
+    width: 100%;
+    padding: 10px 0 10px 0;
 }
 
 .pure-button {
-	white-space: normal; /* allow text wrapping inside buttons */
+    white-space: normal; /* allow text wrapping inside buttons */
 }
 
 .button-xs {font-size: 70%;}
@@ -243,3 +230,20 @@ img.featured-ribbon { /* featured posts */
 .button-error {background: rgb(202, 60, 60);}
 .button-warning {background: rgb(223, 117, 20);}
 .button-secondary {background: rgb(66, 184, 221);}
+
+
+/* RESPONSIVE MEDIA QUERIES */
+
+@media screen and (min-width: 48em) { /* pure-u-md-* */
+	#twitter-timeline {
+		display: inline-block;
+	}
+
+	#posts_list {
+		display: inline-block;
+	}
+
+	#content > * {
+		margin-left: 3px;
+	}
+}

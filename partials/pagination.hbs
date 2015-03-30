@@ -1,4 +1,9 @@
-<ul id="pagination" class="pure-g nav">
-	<li class="pure-u-1-2"><a class="pure-button button-xs {{^if next}} pure-button-disabled {{else}} orange-white {{/if}}" href="{{pageUrl next}}">&auml;lter</a></li>
-	<li class="pure-u-1-2"><a class="pure-button button-xs {{^if prev}} pure-button-disabled {{else}} orange-white {{/if}}" href="{{pageUrl prev}}">neuer</a></li>
-</ul>
+<nav id="pagination" class="pure-g">
+    <div class="pure-u-1-2">
+        <a class="pure-button button-xs {{^if next}}pure-button-disabled{{else}}pure-button-error{{/if}}" href="{{pageUrl next}}">&auml;lter</a>
+    </div>
+
+    <div class="pure-u-1-2">
+        <a class="pure-button button-xs {{^if prev}}pure-button-disabled{{else}}pure-button-error{{/if}}" href="{{pageUrl prev}}">neuer</a>
+    </div>
+</nav>
