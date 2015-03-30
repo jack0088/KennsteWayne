@@ -3,7 +3,7 @@ var getRecentPosts = function(amount, callback) {
 	
 	$.get(rss, function(data) {
 		var recent = [];
-		var parsed = $.parseXML(data);
+		//var parsed = $.parseXML(data);
 		var posts  = $(data).find("item");
 		
 		if (amount) posts = posts.slice(0, amount); // Only display the first number of posts (defined by amount)
@@ -22,10 +22,12 @@ var getRecentPosts = function(amount, callback) {
 	});
 };
 
+/*
 var crop = function(str, words) {
     var cache = str.split(/\s+/, words);
     return cache.join(" ");
 }
+*/
 
 // Gets called on document ready
 $(function() {
@@ -40,6 +42,6 @@ $(function() {
 			
 		    template += "<article class='post'><time class='post-date'>" + post.date.substr(5, 11) + "</time><h2 class='post-title'>" + post.title + "</h2><hr /><p class='post-content'>" + excerpt + "</p><a class='pure-button button-s green-green' href='" + post.url + "'>lesen</a></article>";
 		}
-		$("#posts_list").html(template)
+		$("#posts_list").html(template);
 	});
 });
