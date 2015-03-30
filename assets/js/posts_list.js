@@ -23,8 +23,8 @@ var getRecentPosts = function(amount, callback) {
 };
 
 /*
-var crop = function(str, words) {
-    var cache = str.split(/\s+/, words);
+var crop = function(str, numwords) {
+    var cache = str.split(/\s+/, numwords);
     return cache.join(" ");
 }
 */
