@@ -11,6 +11,8 @@ html, body {
 
 body {
 	background: #FBF9F1;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
 }
 
 hr {
@@ -62,8 +64,9 @@ iframe#twitter-widget-0 {
 
 /* BLOG CONTENT */
 
-main header {
+#content > header {
 	background: #429F8A;
+	overflow: hidden;
 }
 
 #blog-cover {
@@ -132,42 +135,68 @@ main header {
 }
 
 #posts_list { /* ghost partial */
-	display: none;
+    display: none;
 }
 
 #content {
 	z-index: 20; /* overlay #content over #twitter-timeline */
 }
 
+#content > article img {
+    max-width: 100%;
+}
+
+.post-wrapper {
+    background: #E7DDE8; /* #F6F6F6 */
+    position: relative;
+    overflow: hidden;
+}
+
 .post {
-	position: relative;
+    color: #FCEDD0;
+    background: #429F8A;
+    margin-bottom: 1px;
+    text-align: center;
+    font-size: 14px;
+    padding: 20px 20px 20px 20px;
 }
 
-img.featured-ribbon {
+.post-title {
+	font-size: 24px;
+}
+
+.post-date {
+	font-size: 18px;
+}
+
+.post-content {
+	margin: 20px auto;
+    padding: auto 4px;
+}
+
+img.post-image { /* {{image}} */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 50%;
+}
+
+img.featured-ribbon { /* featured posts */
 	position: absolute;
-	top: 0;
-	right: 0;
-}
-
-.post-image { /* {{image}} */
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	content: " ";
-	/*min-height: 300px;*/ /* min-height for .post */
-}
-
-.excerpt {
-	color: #FCEDD0;
-	background: #429F8A;
+    top: 0;
+    right: 0;
 }
 
 .pagination {
 	margin-bottom: 5px;
 	text-align: center;
 	text-transform: uppercase;
-	/*background: #F5A623;*/
+	background: #F5A623;
 }
+
 .pagination .pure-button {
 	display: block;
 	border: 1px solid white; /* for visual separation */
