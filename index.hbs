@@ -20,7 +20,9 @@
                         <a class="pure-button" href="{{url}}">lesen</a>
                     </section>
                 </div>
-                <div class="pure-u-1-2 post-image" style="background-image: url('{{#if image}}{{image}}{{else}}{{asset 'images/ImageMissing.jpg'}}{{/if}}')">&nbsp;</div>
+                <div class="pure-u-1-2">
+                    <img class="post-image" src="{{#if image}}{{image}}{{else}}{{asset 'images/ImageMissing.jpg'}}{{/if}}">
+                </div>
             </article>
 		{{/foreach}}
 		
