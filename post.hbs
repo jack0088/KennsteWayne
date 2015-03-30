@@ -5,7 +5,11 @@
 <script type="text/javascript" src="{{asset 'js/posts_list.js'}}"></script>
 
 <main class="pure-g">
-	<div id="posts_list" class="pure-u-1 pure-u-md-1-4">{{! container filled by js/posts_list.js}}</div>
+    <div class="pure-u-1 pure-u-md-1-4">
+        {{navigation}}
+
+        <div id="posts_list">{{! container filled by js/posts_list.js}}</div>
+    </div>
 	
 	<div id="content" class="pure-u-1 pure-u-md-3-4">
 		{{> banner}}
@@ -20,7 +24,7 @@
 
                             {{#if author}}
                                 <h4>{{author.name}}</h4>
-                                <p>{{author.bio}}</p>
+                                <p>{{{author.bio}}}</p>
                             {{/if}}
                         </section>
                     </span>

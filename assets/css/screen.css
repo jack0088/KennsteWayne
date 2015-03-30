@@ -28,7 +28,7 @@ hr {
 /* VENDORS, PLUGINS */
 
 #twitter-timeline {
-	display: inline-block;
+	display: block;
 }
 
 #twitter-timeline *,
@@ -36,8 +36,6 @@ hr {
 iframe#twitter-widget-0 {
 	width: 100%;
 	min-width: 100% !important;
-	max-height: 100% !important;
-	min-height: 100% !important;
 }
 
 .twitter-timeline {
@@ -214,6 +212,34 @@ img.featured-ribbon { /* featured posts */
     right: calc(50% - 12px);
 }
 
+ul.nav {
+    background: #434343;
+    list-style-type: none;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}
+
+ul.nav li {
+    background: #333;
+    margin: 1px 0;
+    margin-top: 0;
+    padding: 10px 20px;
+}
+
+ul.nav li a {
+    color: #F5A623;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+ul.nav li:hover,
+ul.nav li a:hover {
+    color: #fff;
+    background: #434343;
+}
+
 #pagination {
     text-align: center;
     margin: 2px 0 2px 0;
@@ -262,16 +288,30 @@ img.featured-ribbon { /* featured posts */
     #content > * {
         margin-left: 0;
     }
+
+    ul.nav {
+        text-align: center;
+        margin: 1px 0;
+    }
+
+    ul.nav li {
+        display: inline-block;
+        margin: 1px;
+    }
 }
 
 @media screen and (max-width: 35.5em) {
-    img.featured-ribbon { /* featured posts */
-        right: -12px;
-    }
-
     img.post-image { /* {{image}} */
         position: static;
         width: 100%;
         margin: 0;
+    }
+
+    img.featured-ribbon { /* featured posts */
+        right: -12px;
+    }
+
+    ul.nav li {
+        display: block;
     }
 }

@@ -1,9 +1,13 @@
 {{!< default}}
 
 <main class="pure-g">
-	<aside id="twitter-timeline" class="pure-u-1 pure-u-md-1-4">
-		<a class="twitter-timeline" href="https://twitter.com/braini0088" data-widget-id="551783344569327617">twitter @braini0088</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	</aside>
+    <div class="pure-u-1 pure-u-md-1-4">
+        {{navigation}}
+
+        <aside id="twitter-timeline">
+            <a class="twitter-timeline" href="https://twitter.com/braini0088" data-widget-id="551783344569327617">twitter @braini0088</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </aside>
+    </div>
 
 	<div id="content" class="pure-u-1 pure-u-md-3-4">
 		{{> banner}}
