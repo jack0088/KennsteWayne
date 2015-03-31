@@ -9,21 +9,16 @@ html, body {
 	min-height: 100%;
 }
 
-html, button, input, select, textarea,
+html, body, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
     /* Set your content font stack here: */
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
     font-size: 16px;
-    line-height: 22px;
 }
 
 body {
 	background: #FBF9F1;
-}
-
-small {
-    line-height: normal;
 }
 
 pre, code {
@@ -70,7 +65,7 @@ blockquote {
 
 ul, ol {
     padding-left: 30px;
-    margin-left: 30px;
+    margin-left: 0;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -132,7 +127,7 @@ iframe#twitter-widget-0 {
 /* BLOG CONTENT */
 
 body > main {
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 #content > header {
@@ -232,7 +227,7 @@ body > main {
 }
 
 #posts_list { /* ghost partial */
-    display: inline-block;
+    /*display: inline-block;*/
 }
 
 #posts_list .pure-button,
@@ -310,6 +305,10 @@ body > main {
 
 article > div.post-content {
     padding: 20px;
+}
+
+article > div.post-content p {
+    line-height: 22px;
 }
 
 img.post-image { /* {{image}} */
