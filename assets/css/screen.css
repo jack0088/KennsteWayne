@@ -38,12 +38,29 @@ pre code {
     background: none;
 }
 
-pre {
+pre,
+blockquote {
     padding: 10px;
+    border-radius: 10px;
 }
 
-code {
+code,
+mark {
     padding: 3px;
+}
+
+mark,
+blockquote {
+    background: #F9FFB0;
+    margin: 0;
+}
+
+blockquote {
+    color: #2C6458;
+}
+
+blockquote mark {
+    background: #ACFA63;
 }
 
 ul, ol {
