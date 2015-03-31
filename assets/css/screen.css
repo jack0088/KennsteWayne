@@ -122,6 +122,25 @@ body > main {
 
 #blog-subscription {
     margin-top: 20px;
+    /*
+    background-image: url("../images/rss.png") !important;
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    */
+}
+
+#menu {
+    background: rgba(0,0,0,0.5);
+    border-radius: 3px;
+    padding: 5px;
+    margin: 10px;
+    max-width: 24px;
+    max-height: 24px;
+}
+
+#menu:hover {
+    background: rgba(0,0,0,1);
 }
 
 #ghostwriter div {
@@ -192,7 +211,7 @@ body > main {
 
 .post-content {
 	margin: 20px auto;
-    padding: auto 4px;
+    padding: auto 20px !important;
 }
 
 img.post-image { /* {{image}} */
@@ -212,6 +231,10 @@ img.featured-ribbon { /* featured posts */
     right: calc(50% - 12px);
 }
 
+img#menu {
+    display: none; /* .nav toggle */
+}
+
 ul.nav {
     background: #434343;
     list-style-type: none;
@@ -224,7 +247,7 @@ ul.nav li {
     background: #333;
     margin: 1px 0;
     margin-top: 0;
-    padding: 10px 20px;
+    padding: 10px 40px;
 }
 
 ul.nav li a {
@@ -281,22 +304,27 @@ ul.nav li a:hover {
 		display: none;
 	}
 
-	#content > * {
-		margin-left: 3px;
-	}
-
     #content > * {
         margin-left: 0;
     }
 
+    img#menu {
+        display: block;
+    }
+
+    ul.nav-toggle {
+        display: block !important;
+    }
+
     ul.nav {
+        display: none; /* hidden now but toggled by JS in default.hbs with the help of .nav-toggle */
         text-align: center;
         margin: 1px 0;
     }
 
     ul.nav li {
-        display: inline-block;
-        margin: 1px;
+        display: block;
+        padding: 6px 0;
     }
 }
 
