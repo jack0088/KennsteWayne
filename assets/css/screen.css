@@ -193,8 +193,16 @@ body > main {
     position: relative;
 }
 
-#content > article img {
+#content > article * { /* for all elements like img, iframe, etc. */
     max-width: 100%;
+}
+
+#content .pure-button:hover,
+#content a.pure-button:hover,
+#content input.pure-button:hover,
+#content button.pure-button:hover {
+    color: #429F8A;
+    background-color: #2C6458;
 }
 
 .post-wrapper {
@@ -263,8 +271,9 @@ ul.nav {
     background: #434343;
     list-style-type: none;
     text-transform: uppercase;
-    margin: 0;
+    margin: 0 0 3px 0;
     padding: 0;
+    overflow: hidden;
 }
 
 ul.nav li {
@@ -277,7 +286,6 @@ ul.nav li a {
     color: #F5A623;
     text-decoration: none;
     display: block;
-    width: 100%;
     padding: 10px 40px;
 }
 
@@ -287,11 +295,23 @@ ul.nav li a:hover {
     background: #434343;
 }
 
+ul.nav li:last-child {
+    margin: 0 !important;
+}
+
 #google_translate_element,
 .goog-te-gadget,
 .goog-te-gadget-simple {
     width: 100% !important;
     border: 0 !important;
+}
+
+div.goog-te-gadget-simple {
+    padding: 0;
+}
+
+a.goog-te-menu-value {
+    margin: 0;
 }
 
 #pagination {
@@ -307,14 +327,6 @@ ul.nav li a:hover {
 
 .pure-button {
     white-space: normal; /* allow text wrapping inside buttons */
-}
-
-.pure-button:hover,
-a.pure-button:hover,
-input.pure-button:hover,
-button.pure-button:hover {
-    color: #429F8A;
-    background-color: #2C6458;
 }
 
 .button-xs {font-size: 70%;}
@@ -363,7 +375,6 @@ button.pure-button:hover {
 
     ul.nav li {
         display: block;
-        padding: 6px 0;
     }
 }
 
