@@ -1,7 +1,6 @@
 {{!< default}}
 
 <!-- Posts List Widget -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
 <script type="text/javascript" src="{{asset 'js/posts_list.js'}}"></script>
 
@@ -52,7 +51,7 @@
                     </span>
                 </header>
 
-                {{{content}}}
+                <div class="post-content">{{{content}}}</div>
             </article>
 		{{/post}}
 		

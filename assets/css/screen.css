@@ -241,9 +241,8 @@ body > main {
 	font-size: 18px;
 }
 
-.post-content {
-	margin: 20px auto;
-    padding: auto 20px !important;
+article > div.post-content {
+    padding: 20px;
 }
 
 img.post-image { /* {{image}} */

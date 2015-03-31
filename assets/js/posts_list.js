@@ -30,9 +30,9 @@ var crop = function(str, numwords) {
 // Gets called on document ready
 $(function() {
 	var num_posts = 15;
-	var num_words = 40;
+	var num_words = 40; // post excerpt
 	
-	getRecentPosts(num_posts, function(posts) { // Display [x-null] posts!
+	getRecentPosts(num_posts, function(posts) { // Display null or x posts!
 		var template = "";
 		for (var i = 0; i < posts.length; i++) {
 			var post = posts[i];
