@@ -1,5 +1,6 @@
 {{!< default}}
 
+<!-- Posts List Widget -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v2.0.0.js"></script>
 <script type="text/javascript" src="{{asset 'js/posts_list.js'}}"></script>
@@ -22,10 +23,27 @@
                             <time class="post-date">{{date format="DD. MMM YYYY"}}</time>
                             <h2 class="post-title">{{title}}</h2>
 
+                            <hr>
+
                             {{#if author}}
                                 <h4>{{author.name}}</h4>
                                 <p>{{author.bio}}</p>
                             {{/if}}
+
+                            <hr>
+
+                            {{#if tags}}
+                                <p class="post-tags">
+                                    <b>Tags:</b> {{tags}}
+                                </p>
+                            {{/if}}
+
+                            <p class="post-share">
+                                <b>Teilen:</b>
+                                <a class="share-twitter" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=450');return false;">Twitter</a>,
+                                <a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=300');return false;">Facebook</a>,
+                                <a class="share-google" href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">Google+</a>
+                            </p>
                         </section>
                     </span>
 
