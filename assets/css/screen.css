@@ -48,7 +48,7 @@ blockquote {
 
 code,
 mark {
-    padding: 3px;
+    padding: 1px;
 }
 
 mark,
@@ -314,8 +314,8 @@ article > div.post-content {
     padding: 20px;
 }
 
-article > div.post-content p {
-    line-height: 22px;
+article > div.post-content :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+    line-height: 24px;
 }
 
 img.post-image { /* {{image}} */
