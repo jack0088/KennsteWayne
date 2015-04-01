@@ -7,7 +7,11 @@ var getRecentPosts = function(amount, callback) {
 		var posts  = $(data).find("item");
 		
 		if (amount) posts = posts.slice(0, amount); // Only display the first number of posts (defined by amount)
-		
+
+        //
+        // todo: Choose RANDOM posts!
+        //
+
 		for (var i = 0; posts && i < posts.length; i++) {
 			var post = posts.eq(i);
 			recent.push({

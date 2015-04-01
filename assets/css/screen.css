@@ -1,3 +1,10 @@
+/* todo: disqus width is not recalculated when device tilted! */
+
+/* todo: .gistfile has white bg when code to small in width  */
+
+/* todo: BUG: on ipad portrait mode the left column ist still visible but without any content. Might be the same issue as in firefox the space on top pf the page. */
+
+
 /* GENERAL STYLES */
 
 html, body {
@@ -58,9 +65,9 @@ blockquote mark {
 blockquote {
     background-image: url("../images/quote.png");
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center right;
-    padding-right: 138px;
+    background-size: 10% auto;
+    background-position: top right;
+    padding-right: 10%;
 }
 
 ul, ol {
