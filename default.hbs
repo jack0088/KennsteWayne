@@ -57,7 +57,11 @@
     <!-- Google Translation -->
     <script type="text/javascript">function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage: 'de', includedLanguages: 'en,ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- Toggle .nav with the help of #menu -->
-    <script type="text/javascript">$("img#menu").click(function() { $("ul.nav").toggleClass("nav-toggle") })</script>
+    <!-- Toggle .nav and #sidebar with the help of #menu and .nav-toggle -->
+    <script type="text/javascript">
+        $("img#menu").click(function() {
+            $("ul.nav").toggleClass("nav-toggle");
+        });
+    </script>
 </body>
 </html>

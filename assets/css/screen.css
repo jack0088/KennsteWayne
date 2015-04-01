@@ -2,7 +2,7 @@
 
 /* todo: .gistfile has white bg when code to small in width  */
 
-/* todo: BUG: on ipad portrait mode the left column ist still visible but without any content. Might be the same issue as in firefox the space on top pf the page. */
+/* todo: add second featured-ribbon img (star or sth) for smartphone devices */
 
 
 /* GENERAL STYLES */
@@ -336,7 +336,7 @@ img.featured-ribbon { /* featured posts */
 }
 
 img#menu {
-    display: none; /* .nav toggle */
+    display: none; /* .nav-toggle */
 }
 
 ul.nav {
@@ -414,10 +414,16 @@ a.goog-te-menu-value {
 
 /* RESPONSIVE MEDIA QUERIES */
 
-@media screen and (max-width: 48em) { /* do smaller devices <= pure-u-sm- */
-	#twitter-timeline {
-		display: none;
+@media screen and (max-width: 768px) { /* do smaller devices <= pure-u-md- */
+	main > #sidebar,
+    main #content { /* fix for pure-u-1 on iPad */
+        display: block;
+        width: 100%;
 	}
+
+    #twitter-timeline {
+        display: none;
+    }
 
     #blog-description {
         width: 100%;
@@ -428,7 +434,7 @@ a.goog-te-menu-value {
 	}
 
     #content > * {
-        margin-left: 0;
+        margin: 0;
     }
 
     img#menu {
@@ -450,7 +456,11 @@ a.goog-te-menu-value {
     }
 }
 
-@media screen and (max-width: 35.5em) {
+@media screen and (max-width: 568px) { /* pure-u-sm- */
+    #ghostwriter {
+        display: none;
+    }
+
     img.post-image { /* {{image}} */
         position: static;
         width: 100%;
@@ -458,7 +468,7 @@ a.goog-te-menu-value {
     }
 
     img.featured-ribbon { /* featured posts */
-        right: -12px;
+        right: 0;
     }
 
     ul.nav li {
