@@ -1,49 +1,48 @@
-var getRecentPosts = function(amount, callback) {
-	var rss = $("link[type='application/rss+xml']").attr("href");
-	
-	$.get(rss, function(data) {
-		var recent = [];
-		//var parsed = $.parseXML(data);
-		var posts  = $(data).find("item");
-		
-		if (amount) posts = posts.slice(0, amount); // Only display the first number of posts (defined by amount)
+var getRecentPosts = function(rss, slice, callback) {
+    $.get(rss, function(data) {
+        var posts  = $(data).find("item");
+        var recent = [];
 
-        //
-        // todo: Choose RANDOM posts!
-        //
+        if (slice) posts = posts.slice(0, slice);
 
-		for (var i = 0; posts && i < posts.length; i++) {
-			var post = posts.eq(i);
-			recent.push({
-				title: 	 post.find("title").text(),
-				content: post.find("description").text(),
-				url: 	 post.find("link").text(),
-				date: 	 post.find("pubDate").text()
-			});
-		}
-		
-		callback(recent); // Done collecting posts, process to callback
-	});
+        for (var i = 0; posts && i < posts.length; i++) {
+            var post = posts.eq(i);
+            recent.push({
+                title: 	 post.find("title").text(),
+                content: post.find("description").text(),
+                url: 	 post.find("link").text(),
+                date: 	 post.find("pubDate").text()
+            });
+        }
+
+        callback(recent);
+    });
 };
 
-var crop = function(str, numwords) {
-    var cache = str.split(/\s+/, numwords);
-    return cache.join(" ");
-}
 
-// Gets called on document ready
-$(function() {
-	var num_posts = 10;
-	var num_words = 40; // post excerpt
-	
-	getRecentPosts(num_posts, function(posts) { // Display null or x posts!
-		var template = "";
-		for (var i = 0; i < posts.length; i++) {
-			var post = posts[i];
-			var excerpt = crop($("<div/>").html(post.content).text(), num_words); // strip html and crop string!
-			
-		    template += "<article class='post'><time class='post-date'>" + post.date.substr(5, 11) + "</time><h2 class='post-title'>" + post.title + "</h2><hr><p class='post-content'>" + excerpt + "</p><a class='pure-button button-s' href='" + post.url + "'>lesen</a></article>";
-		}
-		$("#posts_list").html(template);
-	});
+$(function() { // on document ready
+    var rss   = "http://localhost:2368/rss/" // feed url
+	var slice = 10; // posts count
+	var crop  = 40; // words count for description
+
+    var extract = function(str, i) { // extract 'i' words from string 'str'
+        var cache = str.split(/\s+/, i);
+        return cache.join(" ");
+    };
+
+    var callback = function(posts) {
+        var template = "";
+
+        for (var i = 0; i < posts.length; i++) {
+            var post    = posts[i];
+            var content = $("<div/>").html(post.content).text();
+            var excerpt = extract(content, crop);
+
+            template += "<article class='post'><time class='post-date'>" + post.date.substr(5, 11) + "</time><h2 class='post-title'>" + post.title + "</h2><hr><p class='post-content'>" + excerpt + "</p><a class='pure-button button-s' href='" + post.url + "'>lesen</a></article>";
+        }
+
+        $("#posts_list").append(template);
+    };
+
+	getRecentPosts(rss, slice, callback);
 });
