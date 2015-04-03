@@ -21,7 +21,7 @@ var getRecentPosts = function(rss, slice, callback) {
 
 
 $(function() { // on document ready
-    var rss   = "http://localhost:2368/rss/" // feed url
+    var rss   = $("link[type='application/rss+xml']").attr("href"); // feed url
 	var slice = 10; // posts count
 	var crop  = 40; // words count for description
 
