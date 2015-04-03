@@ -225,10 +225,8 @@
 				return false;
 			}
 
-            //
 			// Call the load function with the href attribute of the item
-            // todo: find a solution to dynamically select source (href|src) depending on the elements tag name or something...
-            //
+
 			//loadImage(items.eq(index).attr('href'), function(){ // for <a>
 			loadImage(items.eq(index).attr("src"), function(){ // for <img>
 				placeholders.eq(index).html(this);
