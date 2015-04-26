@@ -97,19 +97,21 @@
 
 			}
 
+            //
+            // todo: issue with multiple galleries on one page: data-gallery attribute is no recognized when assigned to multiple parent elements
+            // <div class="gallery" data-gallery="one">
+            // <div class="gallery" data-gallery="two">
+            //
+
 			//These statements kept seperate in case elements have data-gallery on both
 			//items and ancestor. Ancestor will always win because of above statments.
 			if (galleryName && selectorType == 'item') {
-
 				items = $('[data-gallery='+galleryName+']');
-
 			} else if (galleryName && selectorType == 'ancestor') {
 
 				//Filter to check if item has an ancestory with data-gallery attribute
 				items = items.filter(function(){
-
            			return $(this).parent().closest('[data-gallery]').length;
-
            		});
 
 			}
