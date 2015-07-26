@@ -1,5 +1,5 @@
 <header class="pure-g">
-	<div id="blog-cover" class="pure-u-1 pure-u-sm-2-3" style="background-image: url({{asset 'images/CatHead.png'}}), url({{#if @blog.cover}} {{@blog.cover}} {{else}} {{asset 'images/DefaultBanner.png'}} {{/if}})">
+	<div id="blog-cover" class="pure-u-1 pure-u-sm-2-3" style="background-image: url({{asset 'images/empty.png'}}), url({{#if @blog.cover}} {{@blog.cover}} {{else}} {{asset 'images/DefaultBanner.png'}} {{/if}})">
             <img id="menu" src="{{asset 'images/menu.png'}}">
 			<a href="{{@blog.url}}"><h1 {{#if @blog.logo}} id="blog-logo" style="background: url({{@blog.logo}})" {{else}} id="blog-title" {{/if}}>{{@blog.title}}</h1></a>
 			<h4 id="blog-description">{{{@blog.description}}}</h4>

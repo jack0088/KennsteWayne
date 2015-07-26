@@ -1,7 +1,7 @@
 This is a blog template for [Ghost](http://ghost.org).
 - Before you start using it, you have to customize a few things, which are here for demo purposes!
 
-**ATTENTION:** You can e-mail me for assistance at jack0088@me.com
+**ATTENTION:** You can e-mail me for further assistance at jack0088@me.com
 
 
 1. Inside `default.hbs` look for the `<!-- Google Meta -->` section and replace lines 32-42 by your own Google-Analytics code, which you can get from your Google account. Otherwise just delete all of it.

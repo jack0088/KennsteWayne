@@ -130,10 +130,6 @@ iframe#twitter-widget-0 {
 
 /* BLOG CONTENT */
 
-body > main {
-    /*overflow: hidden;*/
-}
-
 #content > header {
 	background: #429F8A;
 	overflow: hidden;
@@ -454,6 +450,10 @@ a.goog-te-menu-value {
 }
 
 @media screen and (max-width: 568px) { /* pure-u-sm- */
+    body > main {
+        overflow: hidden;
+    }
+
     #ghostwriter {
         display: none;
     }
@@ -465,7 +465,8 @@ a.goog-te-menu-value {
     }
 
     img.featured-ribbon { /* featured posts */
-        right: 0;
+        /*right: 0;*/
+        right: -12px;
     }
 
     ul.nav li {
